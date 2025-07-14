@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Professionnel
 
-## Getting Started
+Un portfolio moderne et responsive développé avec Next.js, TypeScript et Tailwind CSS.
 
-First, run the development server:
+## 🚀 Technologies Utilisées
+
+- **Next.js 14** - Framework React avec App Router
+- **TypeScript** - Typage statique pour un code plus robuste
+- **Tailwind CSS** - Framework CSS utilitaire
+- **Framer Motion** - Animations fluides et modernes
+- **Lucide React** - Icônes modernes et légères
+
+## ✨ Fonctionnalités
+
+- 🎨 **Design Moderne** - Interface élégante avec gradients et animations
+- 🌙 **Mode Sombre/Clair** - Toggle automatique du thème
+- 📱 **Responsive** - Optimisé pour mobile, tablet et desktop
+- ⚡ **Performance** - Optimisé avec Next.js et lazy loading
+- 🔍 **SEO Optimisé** - Meta tags et structure sémantique
+- 🎭 **Animations** - Transitions fluides avec Framer Motion
+
+## 📋 Sections du Portfolio
+
+1. **Hero Section** - Présentation impactante avec CTA
+2. **À propos** - Parcours personnel et professionnel
+3. **Compétences** - Technologies maîtrisées avec barres de progression
+4. **Projets** - Portfolio de réalisations avec filtres
+5. **Contact** - Formulaire de contact et informations
+
+## 🛠️ Installation
 
 ```bash
+# Cloner le repository
+git clone <votre-repo>
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📦 Scripts Disponibles
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev          # Serveur de développement
+npm run build        # Build de production
+npm run start        # Serveur de production
+npm run lint         # Vérification du code
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Personnalisation
 
-## Learn More
+### Couleurs
 
-To learn more about Next.js, take a look at the following resources:
+Les couleurs principales sont définies dans `tailwind.config.ts` :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Bleu : `from-blue-600 to-purple-600`
+- Gris : `slate-50` à `slate-900`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Contenu
 
-## Deploy on Vercel
+Modifiez les composants dans `src/components/` pour personnaliser :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Informations personnelles
+- Projets
+- Compétences
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📱 Responsive Design
+
+- **Mobile** : < 768px
+- **Tablet** : 768px - 1024px
+- **Desktop** : > 1024px
+
+## 🚀 Déploiement
+
+### Vercel
+
+```bash
+npm run build
+vercel --prod
+```
+
+### Netlify
+
+```bash
+npm run build
+# Upload du dossier .next
+```
+
+## 📄 Licence
+
+MIT License - Libre d'utilisation et de modification.
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à :
+
+1. Fork le projet
+2. Créer une branche feature
+3. Commit vos changements
+4. Push vers la branche
+5. Ouvrir une Pull Request
+
+---
+
+**Développé avec ❤️ et Next.js**
