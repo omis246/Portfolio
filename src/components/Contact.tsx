@@ -22,8 +22,8 @@ export default function Contact() {
     {
       icon: FaWhatsapp,
       title: 'WhatsApp',
-      value: '+261 51 409 52',
-      href: 'https://wa.me/2615140952'
+      value: '034 514 09 52',
+      href: 'https://wa.me/261345140952'
     },
     {
       icon: MapPin,

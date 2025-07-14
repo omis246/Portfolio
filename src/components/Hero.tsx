@@ -62,7 +62,7 @@ export default function Hero() {
     },
     {
       icon: FaWhatsapp,
-      href: 'https://wa.me/2615140952',
+      href: 'https://wa.me/261345140952', // Ancien numéro
       label: 'WhatsApp',
       color: '#25D366',
       bg: 'bg-white',
