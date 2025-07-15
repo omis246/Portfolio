@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { MapPin, Send } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import React, { useState, useRef } from 'react';
@@ -99,7 +99,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
+    <section id="contact" className="py-20 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -113,226 +113,198 @@ export default function Contact() {
             {texts[lang].title}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mb-6 shadow-lg"></div>
-          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             {texts[lang].desc}
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <div>
-              <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">
-                {texts[lang].infoTitle}
-              </h3>
-              <p className="text-slate-600 dark:text-slate-300 mb-8">
-                {texts[lang].infoDesc}
-              </p>
-            </div>
+        {/* Contact Info */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-16 grid md:grid-cols-2 gap-8"
+        >
+          {/* Contact Details */}
+          <div>
+            <h3 className="text-2xl font-semibold text-white mb-6">
+              {texts[lang].infoTitle}
+            </h3>
+            <p className="text-slate-300 mb-6">
+              {texts[lang].infoDesc}
+            </p>
+            {contactInfo.map((info, index) => (
+              <motion.a
+                key={info.title}
+                href={info.href}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-center space-x-4 p-4 bg-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:bg-slate-700 transition-all"
+              >
+                <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                  <info.icon size={28} className="text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white">
+                    {info.title}
+                  </h4>
+                  <p className="text-slate-300">
+                    {info.value}
+                  </p>
+                </div>
+              </motion.a>
+            ))}
+          </div>
 
-            {/* Contact Details */}
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
+          {/* Social Links */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">
+              {texts[lang].follow}
+            </h4>
+            <div className="flex space-x-4">
+              {socialLinks.map((social, index) => (
                 <motion.a
-                  key={info.title}
-                  href={info.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center space-x-4 p-4 bg-white/80 dark:bg-slate-800/80 rounded-2xl shadow-md hover:shadow-xl hover:bg-blue-50 dark:hover:bg-slate-700 transition-all"
+                  whileHover={{ scale: 1.15, boxShadow: '0 4px 24px 0 rgba(80, 70, 229, 0.15)' }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`w-14 h-14 bg-slate-800 rounded-full flex items-center justify-center text-slate-300 shadow-md hover:shadow-xl transition-all ${social.color}`}
+                  aria-label={social.name}
                 >
-                  <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                    <info.icon size={28} className="text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white">
-                      {info.title}
-                    </h4>
-                    <p className="text-slate-600 dark:text-slate-300">
-                      {info.value}
-                    </p>
-                  </div>
+                  <social.icon size={28} />
                 </motion.a>
               ))}
             </div>
+          </div>
+        </motion.div>
 
-            {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
-                {texts[lang].follow}
-              </h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.15, boxShadow: '0 4px 24px 0 rgba(80, 70, 229, 0.15)' }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-14 h-14 bg-white/80 dark:bg-slate-800/80 rounded-full flex items-center justify-center text-slate-700 dark:text-slate-300 shadow-md hover:shadow-xl transition-all ${social.color}`}
-                    aria-label={social.name}
-                  >
-                    <social.icon size={28} />
-                  </motion.a>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+        {/* Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-slate-900 rounded-3xl p-10 shadow-2xl"
+        >
+          <h3 className="text-2xl font-semibold text-white mb-6">
+            {texts[lang].formTitle}
+          </h3>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-white/90 dark:bg-slate-900/90 rounded-3xl p-10 shadow-2xl"
-          >
-            <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">
-              {texts[lang].formTitle}
-            </h3>
-
-            <form
-              ref={formRef}
-              className="space-y-6"
-              action="https://formspree.io/f/xwpqewek"
-              method="POST"
-              onSubmit={async (e) => {
-                e.preventDefault();
-                setStatus('sending');
-                const form = e.currentTarget;
-                const data = new FormData(form);
-                try {
-                  const res = await fetch(form.action, {
-                    method: 'POST',
-                    body: data,
-                    headers: { Accept: 'application/json' },
-                  });
-                  if (res.ok) {
-                    setStatus('success');
-                    formRef.current?.reset();
-                  } else {
-                    setStatus('error');
-                  }
-                } catch {
+          <form
+            ref={formRef}
+            className="space-y-6"
+            method="POST"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              setStatus('sending');
+              const form = e.currentTarget;
+              const data = new FormData(form);
+              try {
+                const res = await fetch(form.action, {
+                  method: 'POST',
+                  body: data,
+                  headers: { Accept: 'application/json' },
+                });
+                if (res.ok) {
+                  setStatus('success');
+                  formRef.current?.reset();
+                } else {
                   setStatus('error');
                 }
-              }}
-            >
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    {texts[lang].firstName}
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    required
-                    className="w-full px-5 py-3 border-0 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
-                    placeholder={texts[lang].placeholderFirstName}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    {texts[lang].lastName}
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    required
-                    className="w-full px-5 py-3 border-0 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
-                    placeholder={texts[lang].placeholderLastName}
-                  />
-                </div>
-              </div>
-
+              } catch {
+                setStatus('error');
+              }
+            }}
+          >
+            <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  {texts[lang].email}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-5 py-3 border-0 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
-                  placeholder={texts[lang].placeholderEmail}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  {texts[lang].subject}
+                <label htmlFor="firstName" className="block text-sm font-medium text-slate-300 mb-2">
+                  {texts[lang].firstName}
                 </label>
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
+                  id="firstName"
+                  name="firstName"
                   required
-                  className="w-full px-5 py-3 border-0 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
-                  placeholder={texts[lang].placeholderSubject}
+                  className="w-full px-5 py-3 border-0 rounded-2xl bg-slate-800 text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
+                  placeholder={texts[lang].placeholderFirstName}
                 />
               </div>
-
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  {texts[lang].message}
+                <label htmlFor="lastName" className="block text-sm font-medium text-slate-300 mb-2">
+                  {texts[lang].lastName}
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
                   required
-                  className="w-full px-5 py-3 border-0 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm resize-none"
-                  placeholder={texts[lang].placeholderMessage}
+                  className="w-full px-5 py-3 border-0 rounded-2xl bg-slate-800 text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
+                  placeholder={texts[lang].placeholderLastName}
                 />
               </div>
-
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.05, boxShadow: '0 4px 24px 0 rgba(80, 70, 229, 0.15)' }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-full font-semibold text-lg hover:shadow-xl transition-all flex items-center justify-center space-x-2 shadow-lg"
-                disabled={status === 'sending'}
-              >
-                <Send size={20} />
-                <span>{status === 'sending' ? texts[lang].sending : texts[lang].send}</span>
-              </motion.button>
-            </form>
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                {texts[lang].email}
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="w-full px-5 py-3 border-0 rounded-2xl bg-slate-800 text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
+                placeholder={texts[lang].placeholderEmail}
+              />
+            </div>
+            <div>
+              <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
+                {texts[lang].subject}
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                className="w-full px-5 py-3 border-0 rounded-2xl bg-slate-800 text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
+                placeholder={texts[lang].placeholderSubject}
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                {texts[lang].message}
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                required
+                className="w-full px-5 py-3 border-0 rounded-2xl bg-slate-800 text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
+                placeholder={texts[lang].placeholderMessage}
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-4 px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold text-lg shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all"
+              disabled={status === 'sending'}
+            >
+              {status === 'sending' ? texts[lang].sending : texts[lang].send}
+            </button>
             {status === 'success' && (
-              <div className="mt-4 text-green-600 font-semibold text-center">{texts[lang].success}</div>
+              <p className="text-green-400 text-center mt-4">{texts[lang].success}</p>
             )}
             {status === 'error' && (
-              <div className="mt-4 text-red-600 font-semibold text-center">{texts[lang].error}</div>
+              <p className="text-red-400 text-center mt-4">{texts[lang].error}</p>
             )}
-          </motion.div>
-        </div>
-
-        {/* Availability Status */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="inline-flex items-center space-x-3 bg-green-100/80 dark:bg-green-900/30 text-green-800 dark:text-green-400 px-8 py-4 rounded-full shadow-md">
-            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="font-medium text-lg">{texts[lang].available}</span>
-          </div>
+          </form>
         </motion.div>
       </div>
     </section>

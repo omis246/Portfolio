@@ -16,7 +16,7 @@ Creative, rigorous and attentive, I love turning ideas into concrete, intuitive 
 If you are looking for a professional able to bring your web or mobile projects to life, add real value and take on new challenges, I am ready to collaborate and make your digital vision a reality.`
   }
   return (
-    <section id="about" className="py-20 bg-white dark:bg-slate-900">
+    <section id="about" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Image & Stats */}
@@ -41,25 +41,25 @@ If you are looking for a professional able to bring your web or mobile projects 
             </div>
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="w-16 h-16 mx-auto bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mb-3">
-                  <Music size={24} className="text-blue-600 dark:text-blue-400" />
+                <div className="w-16 h-16 mx-auto bg-slate-100 rounded-full flex items-center justify-center mb-3">
+                  <Music size={24} className="text-blue-600" />
                 </div>
-                <div className="text-2xl font-bold text-slate-900 dark:text-white">Musique</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Guitare, flûte</div>
+                <div className="text-2xl font-bold text-white">Musique</div>
+                <div className="text-sm text-slate-400">Guitare, flûte</div>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 mx-auto bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mb-3">
-                  <Heart size={24} className="text-blue-600 dark:text-blue-400" />
+                <div className="w-16 h-16 mx-auto bg-slate-100 rounded-full flex items-center justify-center mb-3">
+                  <Heart size={24} className="text-blue-600" />
                 </div>
-                <div className="text-2xl font-bold text-slate-900 dark:text-white">Basketball</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Sport</div>
+                <div className="text-2xl font-bold text-white">Basketball</div>
+                <div className="text-sm text-slate-400">Sport</div>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 mx-auto bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mb-3">
-                  <Utensils size={24} className="text-blue-600 dark:text-blue-400" />
+                <div className="w-16 h-16 mx-auto bg-slate-100 rounded-full flex items-center justify-center mb-3">
+                  <Utensils size={24} className="text-blue-600" />
                 </div>
-                <div className="text-2xl font-bold text-slate-900 dark:text-white">Cuisine</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Passion</div>
+                <div className="text-2xl font-bold text-white">Cuisine</div>
+                <div className="text-sm text-slate-400">Passion</div>
               </div>
             </div>
           </motion.div>
@@ -72,12 +72,12 @@ If you are looking for a professional able to bring your web or mobile projects 
             className="space-y-6"
           >
             <div>
-              <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              <h2 className="text-4xl font-bold text-white mb-4">
                 À propos de moi
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded"></div>
             </div>
-            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: texts[lang] }} />
+            <p className="text-lg text-slate-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: texts[lang] }} />
          
            
           

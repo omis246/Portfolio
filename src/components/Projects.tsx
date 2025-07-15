@@ -108,7 +108,7 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-slate-900">
+    <section id="projects" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -118,11 +118,11 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             {texts[lang].title}
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded mx-auto mb-6"></div>
-          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             {texts[lang].desc}
           </p>
         </motion.div>
@@ -137,7 +137,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                className="group relative bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
                 {/* Project Image */}
                 <div className="relative h-64 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
@@ -152,7 +152,7 @@ export default function Projects() {
                 {/* Project Content */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                    <span className="text-sm font-medium text-blue-400">
                       {project.category}
                     </span>
                     <div className="flex space-x-2">
@@ -160,7 +160,7 @@ export default function Projects() {
                         href={project.github}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                        className="p-2 rounded-lg bg-slate-700 text-slate-300 hover:bg-slate-600 transition-colors"
                       >
                         <Github size={16} />
                       </motion.a>
@@ -168,17 +168,17 @@ export default function Projects() {
                         href={project.live}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                        className="p-2 rounded-lg bg-slate-700 text-slate-300 hover:bg-slate-600 transition-colors"
                       >
                         <ExternalLink size={16} />
                       </motion.a>
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+                  <h3 className="text-xl font-semibold text-white mb-3">
                     {project.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4 line-clamp-3">
+                  <p className="text-slate-300 mb-4 line-clamp-3">
                     {project.description}
                   </p>
 
@@ -187,7 +187,7 @@ export default function Projects() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-sm rounded-full"
+                        className="px-3 py-1 bg-slate-700 text-slate-300 text-sm rounded-full"
                       >
                         {tech}
                       </span>
@@ -201,7 +201,7 @@ export default function Projects() {
 
         {/* All Projects Grid */}
         <div id="all-projects">
-          <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-8">
+          <h3 className="text-2xl font-semibold text-white mb-8">
             {texts[lang].all}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -212,7 +212,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                className="group bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
               >
                 {/* Project Image */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
@@ -227,7 +227,7 @@ export default function Projects() {
                 {/* Project Content */}
                 <div className="p-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-medium text-blue-600 dark:text-blue-400">
+                    <span className="text-xs font-medium text-blue-400">
                       {project.category}
                     </span>
                     <div className="flex space-x-1">
@@ -235,7 +235,7 @@ export default function Projects() {
                         href={project.github}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-1.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                        className="p-1.5 rounded bg-slate-700 text-slate-300 hover:bg-slate-600 transition-colors"
                       >
                         <Github size={14} />
                       </motion.a>
@@ -244,7 +244,7 @@ export default function Projects() {
                         onClick={e => { e.preventDefault(); setSelectedProject(project); }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-1.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                        className="p-1.5 rounded bg-slate-700 text-slate-300 hover:bg-slate-600 transition-colors"
                         aria-label={texts[lang].detail}
                       >
                         <Expand size={16} />
@@ -256,37 +256,32 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          className="p-1.5 rounded bg-green-100 dark:bg-green-700 text-green-700 dark:text-green-200 hover:bg-green-200 dark:hover:bg-green-600 transition-colors font-semibold text-xs"
+                          className="p-1.5 rounded bg-green-700 text-green-200 hover:bg-green-600 transition-colors font-semibold text-xs"
                           aria-label="Voir la démo du projet"
                         >
-                          {texts[lang].demo}
+                          Demo
                         </motion.a>
                       )}
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                  <h3 className="text-lg font-semibold text-white mb-3">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 mb-3 line-clamp-2">
+                  <p className="text-slate-300 mb-4 line-clamp-3">
                     {project.description}
                   </p>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.slice(0, 3).map((tech) => (
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-full"
+                        className="px-3 py-1 bg-slate-700 text-slate-300 text-sm rounded-full"
                       >
                         {tech}
                       </span>
                     ))}
-                    {project.technologies.length > 3 && (
-                      <span className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-full">
-                        +{project.technologies.length - 3}
-                      </span>
-                    )}
                   </div>
                 </div>
               </motion.div>
