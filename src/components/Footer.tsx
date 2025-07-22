@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Heart, Github, Linkedin, Twitter, Mail } from 'lucide-react'
+import { Heart, Github, Mail } from 'lucide-react'
 import { useLanguage } from './LanguageProvider'
 
 export default function Footer() {
@@ -20,7 +20,6 @@ export default function Footer() {
             { name: 'À propos', href: '#about' },
             { name: 'Compétences', href: '#skills' },
             { name: 'Projets', href: '#projects' },
-            { name: 'Expérience', href: '#experience' },
             { name: 'Contact', href: '#contact' },
           ]
         },
@@ -39,7 +38,7 @@ export default function Footer() {
             { name: 'React & Next.js', href: '#' },
             { name: 'TypeScript', href: '#' },
             { name: 'Node.js', href: '#' },
-            { name: 'MongoDB', href: '#' },
+           
           ]
         }
       ],
@@ -137,13 +136,11 @@ export default function Footer() {
       }
     ],
     social: [
-      { icon: Github, href: 'https://github.com/votreusername', label: 'GitHub' },
-      { icon: Linkedin, href: 'https://linkedin.com/in/votreusername', label: 'LinkedIn' },
-      { icon: Twitter, href: 'https://twitter.com/votreusername', label: 'Twitter' },
-      { icon: Mail, href: 'mailto:contact@votreportfolio.com', label: 'Email' },
+      { icon: Github, href: 'https://github.com/omis246', label: 'GitHub' },
+      { icon: Mail, href: 'mailto:kevinannopsoraya@gmail.com', label: 'Email' },
     ]
   }
-
+  
   return (
     <footer className="bg-slate-900 dark:bg-slate-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
