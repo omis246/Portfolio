@@ -157,6 +157,7 @@ export default function Contact() {
               ref={formRef}
               className="space-y-6"
               method="POST"
+              action="https://formspree.io/f/xwpqewek"
               onSubmit={async (e) => {
                 e.preventDefault();
                 setStatus('sending');
